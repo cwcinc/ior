@@ -9,12 +9,12 @@ function viewsLB() {
     });
 
   }).then(outArr => {
-    var sorted = [...outArr].sort((a, b) => b[0] - a[0]);
+    var sorted = [...outArr].sort((a, b) => b[1] - a[1]);
     var mainList = [];
     for (let i = 0; i < sorted.length; i++) {
-      mainList.push(sorted[i].join(":"));
+      mainList.push([`${sorted[i][0]}  --  ${sorted[i][1]} views`, sorted[i][2]]);
     }
-    document.getElementById("output").innerHTML = mainList.join("<br>");
+    addLB(mainList);
   });
   
 }
@@ -28,7 +28,7 @@ function getPlaylist() {
     for (i = 0; i < indexes.length; i++) {
       let index1 = indexes[i];
       let ID = data.slice(index1 + 22, index1 + 33);
-      playlistIDs.push(ID);;
+      playlistIDs.push(ID);
     }
     return playlistIDs;
   });
@@ -43,10 +43,20 @@ function getViews(videoID) {
 
     nameIndex = data.indexOf('"title":"');
     nameEnd = data.indexOf('","lengthSeconds');
-    name = data.slice(nameIndex + 9, nameEnd);
+    vidName = data.slice(nameIndex + 9, nameEnd);
     
-    return [viewCount, name];
+    return [vidName, viewCount, videoID];
   });
   
   return F;
+}
+
+function addLB(lbArr) {
+  var LB = document.getElementById("LB");
+  
+  for (i = 0; i < lbArr.length; i++) {
+    var LBItem = document.createElement("li");
+    LBItem.innerHTML = `<a href="https://www.youtube.com/watch?v=${lbArr[i][1]}" target="_blank">${lbArr[i][0]}</a>`;
+    LB.appendChild(LBItem);
+  }
 }
