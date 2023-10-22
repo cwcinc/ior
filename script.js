@@ -1,13 +1,13 @@
 const colorize = {
-  "UChI0J7F5WGGM8MoPJbeOn3A":["#042a19", "Itl' TJ music"],
-  "UCKTClHQ95gmeSDbjV8d42hg":["#126615", "The Kid From Brooklyn Music"],
+  "UChI0J7F5WGGM8MoPJbeOn3A":["#15e88a", "Itl' TJ music"],
+  "UCKTClHQ95gmeSDbjV8d42hg":["#2f9433", "The Kid From Brooklyn Music"],
   "UCzwh7qYbaZJZSSYHHrfhWZg":["#E69696", "Crescendo With Cameron"],
   "UCONQdshorUnIuwvaC6fw6Yw":["#FE6900", "LifeIsGood"],
-  "UCnCQmFq11fNZEte0OdHUYDw":["#ffca53", "Cash Money"],
-  "UCR9xj3lNRYohpcw6UbYMACg":["#000033", "Keu Music"],
-  "UCjftBOYgvHPH-sY8O_fUfmA":["#451b0a", "LEROY the PANTRY BOY"],
-  "UCSQivt4Ik5V8cg7q6fAveUw":["#4d3522", "Al Pharoh Music"],
-  "UC7ko6OXvlWRXIr9OCt-T46w":["#2a6955", "potatojuiceultra"]
+  "UCnCQmFq11fNZEte0OdHUYDw":["#f7ff0a", "Cash Money"],
+  "UCR9xj3lNRYohpcw6UbYMACg":["#2b2bff", "Keu Music"],
+  "UCjftBOYgvHPH-sY8O_fUfmA":["#e3324d", "LEROY the PANTRY BOY"],
+  "UCSQivt4Ik5V8cg7q6fAveUw":["#7d583b", "Al Pharoh Music"],
+  "UC7ko6OXvlWRXIr9OCt-T46w":["#22ff00", "potatojuiceultra"]
 }
 
 const defaultColor = "#804040"
