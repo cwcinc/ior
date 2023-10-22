@@ -10,6 +10,8 @@ const colorize = {
   "UC7ko6OXvlWRXIr9OCt-T46w":["#2a6955", "potatojuiceultra"]
 }
 
+const defaultColor = "#804040"
+
 
 function viewsLB() {
   getPlaylist().then(IDs => {
@@ -23,11 +25,7 @@ function viewsLB() {
 
   }).then(outArr => {
     var sorted = [...outArr].sort((a, b) => b[1] - a[1]);
-    var mainList = [];
-    for (let i = 0; i < sorted.length; i++) {
-      mainList.push([`${sorted[i][0]}  --  ${sorted[i][1]} views`, sorted[i][2], sorted[i][3]]);
-    }
-    addLB(mainList);
+    addLB(sorted);
   });
   
 }
@@ -75,23 +73,25 @@ function getViews(videoID) {
 function addLB(lbArr) {
   var LB = document.getElementById("LB");
   LB.innerHTML = "";
-  
+  console.log(lbArr);
   for (i = 0; i < lbArr.length; i++) {
     var LBItem = document.createElement("li");
-    console.log(lbArr[i][2]);
-    var color = colorize[lbArr[i][2]]
+    console.log(lbArr[i][3]);
+    var color = colorize[lbArr[i][3]]
     console.log(color);
     if (typeof color == "undefined") {
-      color = "#AAAAAA";
+      color = defaultColor;
     } else {
       color = color[0];
     }
     console.log(color);
-    LBItem.innerHTML = `<a href="https://www.youtube.com/watch?v=${lbArr[i][1]}" target="_blank" class="highlight" style="background: ${color}">${lbArr[i][0]}</a>`;
+    LBItem.value = lbArr[i][1];
+    
+    LBItem.innerHTML = `<a href="https://www.youtube.com/watch?v=${lbArr[i][2]}" target="_blank" class="highlight" style="border-color: ${color}">${lbArr[i][0]}</a>`;
     LB.appendChild(LBItem);
   }
 }
 
 function TEST() {
-  addLB([["AIP", "wrararawr", "UCR9xj3lNRYohpcw6UbYMACg"], ["Ive got 3er3", "url", "UCzwh7qYbaZJZSSYHHrfhWZg"], ["too soon", "spooky", "UCKTClHQ95gmeSDbjV8d42hg"]])
+  addLB([["AIP", "432", "wrararawr", "UCR9xj3lNRYohpcw6UbYMACg"], ["Ive got 3er3", "812", "url", "UCzwh7qYbaZJZSSYHHrfhWZg"], ["too soon", "258", "spooky", "UCKTClHQ95gmeSDbjV8d42hg"]])
 }
