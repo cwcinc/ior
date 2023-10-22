@@ -10,8 +10,7 @@ body {
 .highlight {
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 20px;
-  -webkit-text-fill-color: #2f0404;
-  -webkit-text-stroke: 0.5px #fec3c3;
+  display:inline-block;
 }
 
 p {
@@ -49,7 +48,7 @@ p {
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  
+
   flex-direction: row;
   flex-shrink: 0;
   font-family: Eina01,sans-serif;
@@ -127,7 +126,7 @@ p {
 }
 
 .button-78:active:not(:disabled) {
-  color: #8728a9;
+  color: #a9a528;
 }
 
 .button-78:active:not(:disabled):before {
@@ -150,32 +149,37 @@ p {
 /* List styling */
 
 ol {
-  counter-reset: li; 
-  list-style: none; 
-  padding: 0;
-  
+  color: #ffffff;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 20px;
+  margin-left: 30px;
 }
 
 ol a {
   position: relative;
   display: block;
   padding: .4em .4em .4em .8em;
-  margin: .5em 0 .5em 2.5em;
-  background: #dcd8d5;
-  color: #fe2020;
+  margin: .5em 0 .5em 0.5em;
+  background: #804040;
+  color: #ffffff;
   text-decoration: none;
-  transition: all .3s ease-out;
+  transition: all 1.3s ease-out;
+  outline-style: solid;
+  outline-width: 3px;
+  outline-color: #804040;
+  
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 5px;
+  
 }
 
 ol a:hover {background: #ffb68f;}       
 ol a:before {
-  content: counter(li);
-  counter-increment: li;
   position: absolute;
   left: -2.5em;
   top: 50%;
   margin-top: -1em;
-  background: #d27f7f;
   height: 2em;
   width: 2em;
   line-height: 2em;
@@ -193,7 +197,8 @@ ol a:after {
   transition: all .3s ease-out;
 }
 
+
 ol a:hover:after {
-  left: -.5em;
-  border-left-color: #f99595;
+  left: -.7em;
+  border-left-color: #ffffff;
 }
