@@ -87,7 +87,7 @@ function addLB(lbArr) {
       color = color[0];
     }
     console.log(color);
-    LBItem.innerHTML = `<a href="https://www.youtube.com/watch?v=${lbArr[i][1]}" target="_blank" style="background: ${color}">${lbArr[i][0]}</a>`;
+    LBItem.innerHTML = `<a href="https://www.youtube.com/watch?v=${lbArr[i][1]}" target="_blank" class="highlight" style="background: ${color}">${lbArr[i][0]}</a>`;
     LB.appendChild(LBItem);
   }
 }
