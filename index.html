@@ -6,23 +6,28 @@
   <meta name="viewport" content="width=device-width">
   <title>Industry</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
 </head>
 
-<body onload="viewsLB()">
-
+<body>
   <div>
     <button class="button-78 center" 
       onclick="viewsLB()" role="button">Show Leaderboard</button>
+    <button style="display:none;" class="button-78 center" onclick="TEST()" role="button">Run Test</button>
   </div>
+  
+  <p id="progress">Not Started</p>
+  
+  <div id="container"></div>
   
   <div>
     <ol id="LB">
     </ol>
   </div>
-  
-  <script src="script.js"></script>
+  <p id="creatorLB" style="display:none;"></p>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
